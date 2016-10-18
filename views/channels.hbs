@@ -1,8 +1,10 @@
 <div class="container">
   <div class="row">
       <div class="col-lg-10 col-lg-offset-1">
-      {{#each channel}}
+      {{#each channels}}
+        {{@key}}
         <article class="list-group">
+          {{#each this}}
           <a href="#" class="list-group-item">
             <div class="row">
               <div class="col-lg-1">
@@ -23,10 +25,11 @@
                 <p class="list-group-item-text">{{ this.instructorName }}</p>
               </div>
               <div class="col-lg-3">
-                <p class="list-group-item-text">{{ this.period }}</p>
+                <p class="list-group-item-text">{{ this.startTime }} - {{this.endTime}} EDT</p>
               </div>
             </div>
           </a>
+          {{/each}}
         </article>
       {{/each}}
       </div>
