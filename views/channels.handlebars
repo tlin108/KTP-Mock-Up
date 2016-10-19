@@ -1,31 +1,31 @@
-<div class="container">
+<section class="container">
   <div class="row">
       <div class="col-lg-10 col-lg-offset-1">
       {{#each channels}}
-        {{@key}}
+        <p>{{ formatDate @key }}</p>
         <article class="list-group">
           {{#each this}}
           <a href="#" class="list-group-item">
             <div class="row">
-              <div class="col-lg-1">
+              <div class="col-lg-1 col-md-1">
                 <figure>
                   <img src={{ this.subjectPhotoUrl }} alt="Subject Photo" width="60" height="60">
                 </figure>
               </div>
-              <div class="col-lg-5">
+              <div class="col-lg-5 col-md-11">
                 <h4 class="list-group-item-heading">{{ this.title }}</h4>
                 <p class="list-group-item-text">{{ this.description }}</p>
               </div>
-              <div class="col-lg-1">
+              <div class="col-lg-1 col-md-1">
                 <figure>
                   <img src={{ this.instructorPhotoUrl }} alt="Instructor Photo" width="60" height="60">
                 </figure>
               </div>
-              <div class="col-lg-2">
+              <div class="col-lg-2 cold-md-2">
                 <p class="list-group-item-text">{{ this.instructorName }}</p>
               </div>
-              <div class="col-lg-3">
-                <p class="list-group-item-text">{{ this.startTime }} - {{this.endTime}} EDT</p>
+              <div class="col-lg-3 cold-md-3">
+                <time class="list-group-item-text">{{ formatTime this.startTime }} - {{ formatTime this.endTime}} EDT</time>
               </div>
             </div>
           </a>
@@ -34,4 +34,4 @@
       {{/each}}
       </div>
   </div>
-</div>
+</section>
