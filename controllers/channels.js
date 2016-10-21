@@ -3,9 +3,9 @@ const router = express.Router();
 const unsortedChannels = require('../model/channels');
 const _ = require('underscore');
 
-/* GET channel listing. */
+/* GET channel sessions. */
 router.get('/', function(req, res, next) {
-  res.render('channels', { 
+  res.render('channelSessions', { 
     date: sortChannelsByDate(unsortedChannels), 
   });
 });

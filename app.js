@@ -18,18 +18,17 @@ app.engine('handlebars', exphbs({
   partialsDir: './views/partials',
   defaultLayout: 'main',
   helpers: {
-      formatDate: function(nonFormattedDate) { 
-        return moment(nonFormattedDate).format('ddd, MMMM DD, YYYY');
-      },
-      formatTime: function(nonFormattedTime) {
-        return moment(nonFormattedTime, "HH:mm:ss").format('h:mm A');
-      } 
+    formatDate: function(nonFormattedDate) { 
+      return moment(nonFormattedDate).format('ddd, MMMM DD, YYYY');
+    },
+    formatTime: function(nonFormattedTime) {
+      return moment(nonFormattedTime, "HH:mm:ss").format('h:mm A');
+    } 
   }
 }));
 app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, 'views'));
 
-// uncomment after placing your favicon in /public
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
