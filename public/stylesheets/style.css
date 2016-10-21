@@ -16,6 +16,12 @@ a {
   padding-bottom: 10px;
 }
 
+.circled {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+
 @media (max-width: 992px) {
   #subject {
     padding-left: 35px;
