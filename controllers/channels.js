@@ -2,20 +2,12 @@ const express = require('express');
 const router = express.Router();
 const unsortedChannels = require('../model/channels');
 const _ = require('underscore');
-const moment = require('moment')
 
 /* GET channel listing. */
 router.get('/', function(req, res, next) {
   res.render('channels', { 
-    channels: sortChannelsByDate(unsortedChannels), 
-    helpers: {
-      formatDate: function(nonFormattedDate) { 
-        return moment(nonFormattedDate).format('ddd, MMMM DD, YYYY');
-      },
-      formatTime: function(nonFormattedTime) {
-        return moment(nonFormattedTime, "HH:mm:ss").format('h:mm A');
-      } 
-    }});
+    date: sortChannelsByDate(unsortedChannels), 
+  });
 });
 
 function sortChannelsByDate (unsortedChannels){

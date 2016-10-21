@@ -5,8 +5,9 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const exphbs  = require('express-handlebars');
+const moment = require('moment');
 
-const routes = require('./controllers/index');
+const index = require('./controllers/index');
 const channels = require('./controllers/channels');
 
 const app = express();
@@ -14,7 +15,16 @@ const app = express();
 // view engine setup
 app.engine('handlebars', exphbs({
   layoutsDir: './views/layouts',
+  partialsDir: './views/partials',
   defaultLayout: 'main',
+  helpers: {
+      formatDate: function(nonFormattedDate) { 
+        return moment(nonFormattedDate).format('ddd, MMMM DD, YYYY');
+      },
+      formatTime: function(nonFormattedTime) {
+        return moment(nonFormattedTime, "HH:mm:ss").format('h:mm A');
+      } 
+  }
 }));
 app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, 'views'));
@@ -27,7 +37,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
+app.use('/', index);
 app.use('/channels', channels);
 
 // catch 404 and forward to error handler

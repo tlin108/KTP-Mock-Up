@@ -1,0 +1,24 @@
+<a href="#" class="list-group-item">
+  <div class="row">
+    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+      <figure>
+        <img src={{ this.subjectPhotoUrl }} alt="Subject Photo" class="img-circle">
+      </figure>
+    </div>
+    <div class="col-lg-5 col-md-5 col-sm-7 col-xs-7" id="subject">
+      <h4 class="list-group-item-heading"><strong>{{ this.title }}</strong></h4>
+      <p class="list-group-item-text">{{ this.description }}</p>
+    </div>
+    <div class="col-lg-1 col-md-1">
+      <figure >
+        <img src={{ this.instructorPhotoUrl }} alt="Instructor Photo" class="img-circle">
+      </figure>
+    </div>
+    <div class="col-lg-2 col-md-2">
+      <p class="list-group-item-text">{{ this.instructorName }}</p>
+    </div>
+    <div class="col-lg-3 col-md-3">
+      <time>{{ formatTime this.startTime }} - {{ formatTime this.endTime}} EDT</time>
+    </div>
+  </div>
+</a>
