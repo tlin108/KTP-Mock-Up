@@ -6,3 +6,18 @@ body {
 a {
   color: #00B7FF;
 }
+
+.list-group-item .row {
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+
+.list-group-item-heading {
+  padding-bottom: 10px;
+}
+
+@media (max-width: 992px) {
+  #subject {
+    padding-left: 35px;
+  }
+}

@@ -9,9 +9,9 @@ router.get('/', function(req, res, next) {
 
   channels.forEach(function(channel) {
 
-    // remote date from channel time
+    // reformat date, subject start time, and subject end time from channel time
     var dateTime = channel.time.split(' ');
-    channel.date = dateTime[0];
+    channel.date = dateTime[0].toString();
     channel.startTime = dateTime[1].toString();
     var hourMin = dateTime[1].split(':');
     channel.endTime = (parseInt(hourMin[0]) + 1).toString() + ":" + hourMin.splice(1, hourMin.length).join(':');
@@ -24,7 +24,6 @@ router.get('/', function(req, res, next) {
   Object.keys(groupByDate).sort().forEach(function(key) {
     sortByDate[key] = groupByDate[key];
   });
-  console.log(sortByDate);
 
   res.render('channels', { 
     channels: sortByDate, 
