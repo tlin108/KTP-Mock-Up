@@ -21,22 +21,24 @@ a {
   width: 60px;
 }
 
-@media (min-width: 768px) and (max-width: 992px) {
+@media (min-width: 576px) and (max-width: 992px) {
   #subject {
-    margin-left: 15px;
+    padding-left: 50px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media (max-width: 768px) {
   #subject {
     margin-bottom: 20px;
   }
 
-  #hideWhenLessThanMed {
-    display: none;
-  }
-
   #needSpace {
-    margin-right: 60px;
+    margin-right: 50px;
+  }
+}
+
+@media (max-width: 576px) {
+  #hideWhenLessThanXS {
+    display: none;
   }
 }
