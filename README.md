@@ -2,17 +2,14 @@
 
 ## Instruction
 
-1)
 ```bash
-$ npm install
+1) $ npm install
 ```
 
-2)
 ```bash
-$ npm start
+2) $ npm start
 ```
 
-3)
 ```bash
-Visit http://localhost:3000
+3) Visit http://localhost:3000
 ```
