@@ -25,7 +25,7 @@ function sortChannelsByDate (unsortedChannels){
   var sortByTime = _.sortBy(channels, 'time');
   var groupByDate = _.groupBy(sortByTime, 'date');
 
-  var sortByDate = {}
+  var sortByDate = {};
   // sort date in ascending order
   Object.keys(groupByDate).sort().forEach(function(date) {
     sortByDate[date] = groupByDate[date];

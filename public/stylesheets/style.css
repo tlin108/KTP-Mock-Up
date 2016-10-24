@@ -7,6 +7,13 @@ a {
   color: #00B7FF;
 }
 
+#no-radius {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
 .list-group-item .row {
   padding-bottom: 20px;
   padding-top: 10px;
@@ -32,13 +39,13 @@ a {
     margin-bottom: 20px;
   }
 
-  #needSpace {
+  #instructor-photo {
     margin-right: 50px;
   }
 }
 
 @media (max-width: 576px) {
-  #hideWhenLessThanXS {
+  #subject-photo {
     display: none;
   }
 }
